@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram, Linkedin, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import logoFull from "@assets/rc_logo_1765393880929.png";
+import logoIcon from "@assets/rc_logo_only_1765393880928.png";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -65,13 +67,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4 flex justify-between items-center">
           <Link href="/">
             <a className="flex items-center gap-2 group">
-              <div className="w-10 h-10 bg-primary flex items-center justify-center rounded-sm text-white font-bold text-xl group-hover:bg-secondary transition-colors">
-                RC
-              </div>
-              <div className="flex flex-col leading-tight">
-                <span className="text-xl font-bold font-heading text-primary group-hover:text-primary/80 transition-colors">RAJESHWORI</span>
-                <span className="text-xs tracking-widest uppercase text-gray-500 font-medium">Construction Pvt. Ltd.</span>
-              </div>
+              <img 
+                src={logoFull} 
+                alt="Rajeshwori Construction" 
+                className="h-16 w-auto object-contain" 
+              />
             </a>
           </Link>
 
@@ -149,8 +149,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 bg-secondary flex items-center justify-center rounded-sm text-white font-bold">RC</div>
-                <span className="text-xl font-bold font-heading">RAJESHWORI</span>
+                 <img 
+                  src={logoIcon} 
+                  alt="RC Logo" 
+                  className="h-12 w-auto object-contain bg-white rounded-sm p-1" 
+                />
+                <span className="text-xl font-bold font-heading text-white">RAJESHWORI</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-6">
                 Leading construction company delivering quality, innovation, and trust across Nepal. 
