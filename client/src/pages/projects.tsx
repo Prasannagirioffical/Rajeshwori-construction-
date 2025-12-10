@@ -9,20 +9,22 @@ import heroBg from "@assets/generated_images/hero_background_for_construction_we
 export default function Projects() {
   const [filter, setFilter] = useState("All");
 
-  const categories = ["All", "Buildings", "Roads", "Bridges", "Ongoing"];
+  const categories = ["All", "Buildings", "Roads", "Bridges", "Ongoing", "Completed"];
 
   const projects = [
-    { id: 1, title: "Sunrise Commercial Complex", category: "Buildings", location: "Baneshwor, Kathmandu", img: buildingImg },
-    { id: 2, title: "East-West Highway Expansion", category: "Roads", location: "Chitwan, Nepal", img: roadImg },
-    { id: 3, title: "Trishuli River Bridge", category: "Bridges", location: "Dhading, Nepal", img: bridgeImg },
-    { id: 4, title: "City Hospital Block B", category: "Buildings", location: "Lalitpur, Nepal", img: buildingImg },
-    { id: 5, title: "Rural Access Road", category: "Roads", location: "Sindhupalchowk", img: roadImg },
-    { id: 6, title: "Luxury Apartment Complex", category: "Ongoing", location: "Kathmandu", img: heroBg },
+    { id: 1, title: "Sunrise Commercial Complex", category: "Buildings", location: "Baneshwor, Kathmandu", status: "Completed", img: buildingImg },
+    { id: 2, title: "East-West Highway Expansion", category: "Roads", location: "Chitwan, Nepal", status: "Ongoing", img: roadImg },
+    { id: 3, title: "Trishuli River Bridge", category: "Bridges", location: "Dhading, Nepal", status: "Completed", img: bridgeImg },
+    { id: 4, title: "City Hospital Block B", category: "Buildings", location: "Lalitpur, Nepal", status: "Completed", img: buildingImg },
+    { id: 5, title: "Rural Access Road", category: "Roads", location: "Sindhupalchowk", status: "Ongoing", img: roadImg },
+    { id: 6, title: "Luxury Apartment Complex", category: "Buildings", location: "Kathmandu", status: "Ongoing", img: heroBg },
   ];
 
   const filteredProjects = filter === "All" 
     ? projects 
-    : projects.filter(p => p.category === filter);
+    : filter === "Ongoing" || filter === "Completed"
+      ? projects.filter(p => p.status === filter)
+      : projects.filter(p => p.category === filter);
 
   return (
     <div className="w-full">
@@ -78,7 +80,10 @@ export default function Projects() {
                   <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-6 text-center">
                     <p className="text-secondary font-bold uppercase text-sm mb-2 tracking-widest">{project.category}</p>
                     <h3 className="text-2xl font-bold font-heading mb-2">{project.title}</h3>
-                    <p className="text-gray-300 text-sm mb-6">{project.location}</p>
+                    <p className="text-gray-300 text-sm mb-2">{project.location}</p>
+                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-6 ${project.status === 'Ongoing' ? 'bg-secondary text-white' : 'bg-green-600 text-white'}`}>
+                      {project.status}
+                    </span>
                     <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary rounded-none">View Details</Button>
                   </div>
                 </div>

@@ -81,7 +81,10 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl font-bold font-heading leading-tight mb-6">
               Building the <span className="text-secondary">Foundation</span> of Tomorrow
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-xl leading-relaxed">
+            <p className="text-xl md:text-2xl text-secondary font-bold mb-4 tracking-wide">
+              Quality Is Our Identity
+            </p>
+            <p className="text-lg text-gray-200 mb-8 max-w-xl leading-relaxed">
               Leading construction company delivering quality, innovation, and trust across Nepal. From skyscrapers to highways, we build with excellence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -281,6 +284,56 @@ export default function Home() {
               <CarouselNext className="static translate-y-0" />
             </div>
           </Carousel>
+        </div>
+      </section>
+
+      {/* Client Testimonials */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h4 className="text-secondary font-bold uppercase tracking-widest mb-2">Testimonials</h4>
+            <h2 className="text-4xl font-bold font-heading text-primary mb-4">What Our Clients Say</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="border-t-4 border-secondary shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex gap-1 mb-4">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <div key={i} className="w-4 h-4 bg-secondary rounded-full" />
+                  ))}
+                </div>
+                <p className="text-gray-600 mb-6 italic text-lg">
+                  "Rajeshwori Construction delivered our commercial complex project on time and with exceptional quality. Their attention to detail and safety standards is commendable."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl">RS</div>
+                  <div>
+                    <h4 className="font-bold text-primary">Ram Sharma</h4>
+                    <p className="text-sm text-gray-500">CEO, Alpha Group</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-t-4 border-secondary shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex gap-1 mb-4">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <div key={i} className="w-4 h-4 bg-secondary rounded-full" />
+                  ))}
+                </div>
+                <p className="text-gray-600 mb-6 italic text-lg">
+                  "A highly professional team that understands the complexities of road infrastructure. We are extremely satisfied with their work on the highway expansion."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl">SA</div>
+                  <div>
+                    <h4 className="font-bold text-primary">Sita Adhikari</h4>
+                    <p className="text-sm text-gray-500">Project Manager, Dept. of Roads</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 

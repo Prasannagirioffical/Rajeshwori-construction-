@@ -34,6 +34,27 @@ export default function Services() {
       features: ["Structural Design", "Retrofitting", "Soil Testing", "Project Management"],
       image: buildingImg, // reusing image for layout
       icon: <Hammer className="h-12 w-12 text-white" />
+    },
+    {
+      title: "Architectural Design",
+      desc: "Creating modern, functional, and aesthetic architectural designs for residential and commercial projects.",
+      features: ["3D Modeling", "Interior Design", "Landscape Planning", "Blueprint Creation"],
+      image: buildingImg,
+      icon: <Ruler className="h-12 w-12 text-white" />
+    },
+    {
+      title: "Heavy Equipment Supply",
+      desc: "Reliable supply of heavy machinery for large-scale construction projects across the nation.",
+      features: ["Excavators", "Cranes", "Bulldozers", "Dump Trucks"],
+      image: roadImg,
+      icon: <Truck className="h-12 w-12 text-white" />
+    },
+    {
+      title: "Renovation & Maintenance",
+      desc: "Restoring and upgrading existing structures to meet modern standards and extend their lifespan.",
+      features: ["Building Retrofitting", "Road Maintenance", "Bridge Repair", "Heritage Preservation"],
+      image: bridgeImg,
+      icon: <Hammer className="h-12 w-12 text-white" />
     }
   ];
 

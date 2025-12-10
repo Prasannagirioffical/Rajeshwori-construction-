@@ -29,6 +29,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     { href: "/about", label: "About Us" },
     { href: "/services", label: "Services" },
     { href: "/projects", label: "Projects" },
+    { href: "/equipment", label: "Equipment" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -144,8 +145,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-primary text-white pt-16 pb-8">
-        <div className="container mx-auto px-4">
+      <footer className="bg-primary text-white pt-16 pb-0 relative overflow-hidden">
+        <div className="container mx-auto px-4 pb-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-6">
@@ -235,6 +236,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </div>
+        
+        {/* Bridge Graphic at Bottom */}
+        <div className="w-full h-24 mt-8 opacity-10 bg-repeat-x" style={{ 
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='1200' height='120' viewBox='0 0 1200 120' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 120L600 20L1200 120H0Z' fill='white'/%3E%3Cpath d='M100 120L600 40L1100 120' stroke='white' stroke-width='5'/%3E%3Cpath d='M200 120V105' stroke='white' stroke-width='5'/%3E%3Cpath d='M300 120V90' stroke='white' stroke-width='5'/%3E%3Cpath d='M400 120V75' stroke='white' stroke-width='5'/%3E%3Cpath d='M500 120V60' stroke='white' stroke-width='5'/%3E%3Cpath d='M600 120V45' stroke='white' stroke-width='5'/%3E%3Cpath d='M700 120V60' stroke='white' stroke-width='5'/%3E%3Cpath d='M800 120V75' stroke='white' stroke-width='5'/%3E%3Cpath d='M900 120V90' stroke='white' stroke-width='5'/%3E%3Cpath d='M1000 120V105' stroke='white' stroke-width='5'/%3E%3C/svg%3E")`,
+          backgroundPosition: 'bottom center',
+          backgroundSize: '1200px 100%'
+        }}></div>
       </footer>
     </div>
   );

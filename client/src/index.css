@@ -43,54 +43,56 @@
 }
 
 :root {
-  /* Deep Blue #0A3A67 -> 209 82% 22% */
-  /* Construction Orange #FF8A00 -> 32 100% 50% */
+  /* Dark Navy Blue #0A2A43 -> 206 74% 15% */
+  /* Construction Orange #F28C28 -> 30 89% 55% */
+  /* Grey #4A4A4A -> 0 0% 29% */
   
   --background: 0 0% 100%;
-  --foreground: 209 82% 15%; /* Darker blue-black for text */
-
+  --foreground: 206 74% 15%; /* Dark Navy for text base, or stick to dark grey? Prompt says "Body text: dark grey" */
+  /* Using Dark Navy for strong text, dark grey for body */
+  
   --card: 0 0% 100%;
-  --card-foreground: 209 82% 15%;
+  --card-foreground: 206 74% 15%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 209 82% 15%;
+  --popover-foreground: 206 74% 15%;
 
-  --primary: 209 82% 22%; /* Deep Blue */
+  --primary: 206 74% 15%; /* Dark Navy Blue */
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 32 100% 50%; /* Construction Orange */
+  --secondary: 30 89% 55%; /* Construction Orange */
   --secondary-foreground: 0 0% 100%;
 
   --muted: 210 20% 96%;
-  --muted-foreground: 215 16% 47%;
+  --muted-foreground: 0 0% 29%; /* Dark Grey */
 
   --accent: 210 20% 96%;
-  --accent-foreground: 209 82% 22%;
+  --accent-foreground: 206 74% 15%;
 
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
 
   --border: 214.3 31.8% 91.4%;
   --input: 214.3 31.8% 91.4%;
-  --ring: 209 82% 22%;
+  --ring: 206 74% 15%;
 
   --radius: 0.5rem;
 }
 
 .dark {
-  --background: 209 50% 10%;
+  --background: 206 50% 10%;
   --foreground: 210 40% 98%;
 
-  --card: 209 50% 12%;
+  --card: 206 50% 12%;
   --card-foreground: 210 40% 98%;
 
-  --popover: 209 50% 10%;
+  --popover: 206 50% 10%;
   --popover-foreground: 210 40% 98%;
 
-  --primary: 209 82% 40%; /* Lighter Blue for Dark Mode */
+  --primary: 206 74% 25%; /* Lighter version for dark mode */
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 32 100% 50%;
+  --secondary: 30 89% 55%;
   --secondary-foreground: 0 0% 100%;
 
   --muted: 217.2 32.6% 17.5%;
@@ -115,6 +117,9 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold;
+    @apply font-heading font-bold text-primary;
+  }
+  p {
+    @apply text-muted-foreground;
   }
 }
