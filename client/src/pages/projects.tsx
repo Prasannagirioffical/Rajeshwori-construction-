@@ -4,20 +4,69 @@ import { Button } from "@/components/ui/button";
 import buildingImg from "@assets/generated_images/commercial_building_construction_service_image.png";
 import roadImg from "@assets/generated_images/road_construction_service_image.png";
 import bridgeImg from "@assets/generated_images/bridge_construction_service_image.png";
+import irrigationImg from "@assets/generated_images/irrigation_canal_construction_project.png";
 import heroBg from "@assets/generated_images/hero_background_for_construction_website.png";
 
 export default function Projects() {
   const [filter, setFilter] = useState("All");
 
-  const categories = ["All", "Buildings", "Roads", "Bridges", "Ongoing", "Completed"];
+  const categories = ["All", "Buildings", "Roads", "Bridges", "Irrigation", "Ongoing", "Completed"];
 
   const projects = [
-    { id: 1, title: "Sunrise Commercial Complex", category: "Buildings", location: "Baneshwor, Kathmandu", status: "Completed", img: buildingImg },
-    { id: 2, title: "East-West Highway Expansion", category: "Roads", location: "Chitwan, Nepal", status: "Ongoing", img: roadImg },
-    { id: 3, title: "Trishuli River Bridge", category: "Bridges", location: "Dhading, Nepal", status: "Completed", img: bridgeImg },
-    { id: 4, title: "City Hospital Block B", category: "Buildings", location: "Lalitpur, Nepal", status: "Completed", img: buildingImg },
-    { id: 5, title: "Rural Access Road", category: "Roads", location: "Sindhupalchowk", status: "Ongoing", img: roadImg },
-    { id: 6, title: "Luxury Apartment Complex", category: "Buildings", location: "Kathmandu", status: "Ongoing", img: heroBg },
+    { 
+      id: 1, 
+      title: "Dumre-Chakaldi-Kusumkhola Road", 
+      category: "Roads", 
+      location: "Palpa, Nepal", 
+      status: "Completed", 
+      img: roadImg,
+      desc: "Completed construction Works under National Reconstruction Authority (District Project Implementation Unit Palpa). Executed by Rayamajhi-Rajeshwari-PTR Adhikari J.V."
+    },
+    { 
+      id: 2, 
+      title: "Sunrise Commercial Complex", 
+      category: "Buildings", 
+      location: "Baneshwor, Kathmandu", 
+      status: "Completed", 
+      img: buildingImg,
+      desc: "Modern commercial complex with state-of-the-art facilities."
+    },
+    { 
+      id: 3, 
+      title: "East-West Highway Expansion", 
+      category: "Roads", 
+      location: "Chitwan, Nepal", 
+      status: "Ongoing", 
+      img: roadImg,
+      desc: "Major highway expansion project to improve connectivity."
+    },
+    { 
+      id: 4, 
+      title: "Trishuli River Bridge", 
+      category: "Bridges", 
+      location: "Dhading, Nepal", 
+      status: "Completed", 
+      img: bridgeImg,
+      desc: "Concrete bridge construction connecting two major districts."
+    },
+    { 
+      id: 5, 
+      title: "City Hospital Block B", 
+      category: "Buildings", 
+      location: "Lalitpur, Nepal", 
+      status: "Completed", 
+      img: buildingImg,
+      desc: "Healthcare infrastructure development."
+    },
+    { 
+      id: 6, 
+      title: "Rural Irrigation Project", 
+      category: "Irrigation", 
+      location: "Terai Region", 
+      status: "Ongoing", 
+      img: irrigationImg,
+      desc: "Large scale irrigation canal network for agricultural development."
+    },
   ];
 
   const filteredProjects = filter === "All" 
@@ -81,6 +130,11 @@ export default function Projects() {
                     <p className="text-secondary font-bold uppercase text-sm mb-2 tracking-widest">{project.category}</p>
                     <h3 className="text-2xl font-bold font-heading mb-2">{project.title}</h3>
                     <p className="text-gray-300 text-sm mb-2">{project.location}</p>
+                    {project.desc && (
+                      <p className="text-gray-200 text-xs mb-4 line-clamp-3 px-4 max-w-xs mx-auto">
+                        {project.desc}
+                      </p>
+                    )}
                     <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-6 ${project.status === 'Ongoing' ? 'bg-secondary text-white' : 'bg-green-600 text-white'}`}>
                       {project.status}
                     </span>
