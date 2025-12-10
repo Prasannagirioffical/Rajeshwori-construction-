@@ -48,23 +48,22 @@
   /* Grey #4A4A4A -> 0 0% 29% */
   
   --background: 0 0% 100%;
-  --foreground: 206 74% 15%; /* Dark Navy for text base, or stick to dark grey? Prompt says "Body text: dark grey" */
-  /* Using Dark Navy for strong text, dark grey for body */
-  
+  --foreground: 206 74% 15%; 
+
   --card: 0 0% 100%;
   --card-foreground: 206 74% 15%;
 
   --popover: 0 0% 100%;
   --popover-foreground: 206 74% 15%;
 
-  --primary: 206 74% 15%; /* Dark Navy Blue */
+  --primary: 206 74% 15%; 
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 30 89% 55%; /* Construction Orange */
+  --secondary: 30 89% 55%; 
   --secondary-foreground: 0 0% 100%;
 
   --muted: 210 20% 96%;
-  --muted-foreground: 0 0% 29%; /* Dark Grey */
+  --muted-foreground: 0 0% 29%; 
 
   --accent: 210 20% 96%;
   --accent-foreground: 206 74% 15%;
@@ -89,7 +88,7 @@
   --popover: 206 50% 10%;
   --popover-foreground: 210 40% 98%;
 
-  --primary: 206 74% 25%; /* Lighter version for dark mode */
+  --primary: 206 74% 25%;
   --primary-foreground: 0 0% 100%;
 
   --secondary: 30 89% 55%;
@@ -113,8 +112,14 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    ::selection {
+      @apply bg-secondary text-white;
+    }
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold text-primary;
@@ -122,4 +127,15 @@
   p {
     @apply text-muted-foreground;
   }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 hover:bg-secondary rounded-full transition-colors;
 }
