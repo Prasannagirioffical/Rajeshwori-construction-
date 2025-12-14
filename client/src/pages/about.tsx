@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
-import teamImg from "@assets/generated_images/team_of_engineers_for_about_page.png";
+import teamImg from "@assets/generated_images/da.jpg";
+import govImg from "@assets/generated_images/gov.png";
+import motiImg from "@assets/generated_images/mo.jpg";
+import ptrImg from "@assets/generated_images/ptr.jpg";
+import eliteImg from "@assets/generated_images/elite.png";
+
+
 import { CheckCircle } from "lucide-react";
 
 export default function About() {
@@ -14,7 +20,7 @@ export default function About() {
             <span>Home</span>
             <span className="text-secondary">/</span>
             <span className="text-secondary">About Us</span>
-          </div>
+          </div> 
         </div>
       </div>
 
@@ -39,7 +45,7 @@ export default function About() {
             </div>
             <div className="relative">
               <div className="absolute -top-4 -right-4 w-full h-full border-4 border-secondary rounded-sm z-0" />
-              <img src={teamImg} alt="Our Team" className="w-full h-full object-cover rounded-sm shadow-xl relative z-10" />
+              <img src={teamImg} alt="Our Team" className="w-full h-96 object-cover rounded-sm shadow-xl relative z-122" />
             </div>
           </div>
         </div>
@@ -75,19 +81,44 @@ export default function About() {
         </div>
       </section>
 
-      {/* Certifications */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold font-heading text-primary mb-12">Accreditations & Memberships</h2>
-          <div className="flex flex-wrap justify-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-             {/* Placeholders for logos */}
-             <div className="h-24 w-48 bg-gray-200 flex items-center justify-center font-bold text-gray-400">ISO 9001:2015</div>
-             <div className="h-24 w-48 bg-gray-200 flex items-center justify-center font-bold text-gray-400">FCAN Member</div>
-             <div className="h-24 w-48 bg-gray-200 flex items-center justify-center font-bold text-gray-400">Govt of Nepal</div>
-             <div className="h-24 w-48 bg-gray-200 flex items-center justify-center font-bold text-gray-400">Safety Council</div>
-          </div>
-        </div>
-      </section>
+     <section className="py-20">
+  <div className="container mx-auto px-4 text-center">
+    <h2 className="text-3xl font-bold font-heading text-primary mb-12">
+      Our Client & JV Partner
+    </h2>
+
+    <div className="flex flex-wrap justify-center gap-12 opacity-100 transition-all duration-500">
+      
+      <img
+        src={govImg} 
+        alt="government of Nepal"
+        className="h-24 w-48 object-contain"
+  
+      />
+     
+      
+      <img
+        src={motiImg}
+        alt="moltidan construction"
+        className="h-24 w-48 object-contain"
+      />
+      
+      <img
+        src={ptrImg}
+        alt="PTR Member"
+        className="h-24 w-48 object-contain"
+    />
+      
+      <img
+        src={eliteImg}
+        alt="elite construction"
+        className="h-24 w-48 object-contain"
+      />
+
+    </div>
+  </div>
+</section>
+
     </div>
   );
 }

@@ -2,10 +2,16 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import buildingImg from "@assets/generated_images/commercial_building_construction_service_image.png";
-import roadImg from "@assets/generated_images/road_construction_service_image.png";
 import bridgeImg from "@assets/generated_images/bridge_construction_service_image.png";
 import irrigationImg from "@assets/generated_images/irrigation_canal_construction_project.png";
 import heroBg from "@assets/generated_images/hero_background_for_construction_website.png";
+import ruruimg from "@assets/generated_images/ruru.jpg";
+import dumreimg from "@assets/generated_images/dumre.jpg";
+import dareimg from "@assets/generated_images/dare.jpg";
+import setiimg from "@assets/generated_images/seti.png";
+import bedimg from "@assets/generated_images/15bed.jpg";
+import barseimg from "@assets/generated_images/barse.jpg";
+
 
 export default function Projects() {
   const [filter, setFilter] = useState("All");
@@ -13,59 +19,63 @@ export default function Projects() {
   const categories = ["All", "Buildings", "Roads", "Bridges", "Irrigation", "Ongoing", "Completed"];
 
   const projects = [
-    { 
+       { 
       id: 1, 
-      title: "Dumre-Chakaldi-Kusumkhola Road", 
-      category: "Roads", 
-      location: "Palpa, Nepal", 
+      title: "Dhare Khola Bridge ", 
+      category: "Bridges", 
+      location: "Gulmi, Nepal", 
       status: "Completed", 
-      img: roadImg,
-      desc: "Completed construction Works under National Reconstruction Authority (District Project Implementation Unit Palpa). Executed by Rayamajhi-Rajeshwari-PTR Adhikari J.V."
+      img: dareimg,
+      desc: "Design and Build of Dhare Khola Bridge "
     },
+    
+    
     { 
       id: 2, 
-      title: "Sunrise Commercial Complex", 
+      title: "Ruru rural Municipality Government Office", 
       category: "Buildings", 
-      location: "Baneshwor, Kathmandu", 
+      location: "Gulmi, Nepal", 
       status: "Completed", 
-      img: buildingImg,
-      desc: "Modern commercial complex with state-of-the-art facilities."
+      img: ruruimg,
+      desc: "Government office building construction with modern facilities."
     },
+    
+ 
     { 
       id: 3, 
-      title: "East-West Highway Expansion", 
-      category: "Roads", 
-      location: "Chitwan, Nepal", 
-      status: "Ongoing", 
-      img: roadImg,
-      desc: "Major highway expansion project to improve connectivity."
-    },
-    { 
-      id: 4, 
-      title: "Trishuli River Bridge", 
+      title: "Setibeni bridge", 
       category: "Bridges", 
-      location: "Dhading, Nepal", 
-      status: "Completed", 
-      img: bridgeImg,
+      location: "Palpa, Nepal", 
+      status: "Ongoing", 
+      img: setiimg,
       desc: "Concrete bridge construction connecting two major districts."
     },
     { 
-      id: 5, 
-      title: "City Hospital Block B", 
+      id: 4, 
+      title: "15 Bed Hospital Building", 
       category: "Buildings", 
-      location: "Lalitpur, Nepal", 
+      location: "Ridi, Nepal", 
       status: "Completed", 
-      img: buildingImg,
+      img: bedimg,
       desc: "Healthcare infrastructure development."
     },
     { 
+      id: 5, 
+      title: "Dumre-Chakaldi-Kusumkhola Road", 
+      category: "Roads", 
+      location: "Palpa, Nepal", 
+      status: "ongoing", 
+      img: dumreimg,
+      desc: "Completed construction Works under National Reconstruction Authority (District Project Implementation Unit Palpa). Executed by Rayamajhi-Rajeshwari-PTR Adhikari J.V."
+    },
+    { 
       id: 6, 
-      title: "Rural Irrigation Project", 
-      category: "Irrigation", 
-      location: "Terai Region", 
+      title: "Bharse bridge ", 
+      category: "Bridges", 
+      location: " Lumbini, Nepal", 
       status: "Ongoing", 
-      img: irrigationImg,
-      desc: "Large scale irrigation canal network for agricultural development."
+      img: barseimg,
+      desc: "bridge ."
     },
   ];
 
@@ -110,25 +120,42 @@ export default function Projects() {
           </div>
 
           {/* Grid */}
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div 
+            layout 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+          >
             {filteredProjects.map((project) => (
               <motion.div
                 layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.5 }}
                 key={project.id}
                 className="group relative overflow-hidden bg-white shadow-md cursor-pointer"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
                     src={project.img} 
+              
                     alt={project.title} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-6 text-center">
                     <p className="text-secondary font-bold uppercase text-sm mb-2 tracking-widest">{project.category}</p>
-                    <h3 className="text-2xl font-bold font-heading mb-2">{project.title}</h3>
+                    <h3 className="text-2xl font-bold font-heading mb-2 text-white">{project.title}</h3>
                     <p className="text-gray-300 text-sm mb-2">{project.location}</p>
                     {project.desc && (
                       <p className="text-gray-200 text-xs mb-4 line-clamp-3 px-4 max-w-xs mx-auto">

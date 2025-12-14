@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
-import buildingImg from "@assets/generated_images/commercial_building_construction_service_image.png";
-import roadImg from "@assets/generated_images/road_construction_service_image.png";
-import bridgeImg from "@assets/generated_images/bridge_construction_service_image.png";
+import buildingImg from "@assets/generated_images/ruru.jpg";
+import roadImg from "@assets/generated_images/44.jpg";
+import bridgeImg from "@assets/generated_images/cc.jpg";
+import waterImg from "@assets/generated_images/kali.jpg";
+
+
+
 import { Building2, Truck, Ruler, Hammer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -29,33 +33,13 @@ export default function Services() {
       icon: <Ruler className="h-12 w-12 text-white" />
     },
     {
-      title: "Structural Engineering",
-      desc: "Our engineering team provides comprehensive structural analysis, design, and consultancy services to ensure safety and compliance with building codes.",
-      features: ["Structural Design", "Retrofitting", "Soil Testing", "Project Management"],
-      image: buildingImg, // reusing image for layout
+      title: "Irrigation Projects",
+      desc: "Irrigation wayers, canals, and water management systems to support agricultural productivity and sustainable water use.",
+      features: ["Storage Tanks", "Water Treatment Plants", "Drainage Systems", "Pump Stations"],
+      image: waterImg, // reusing image for layout
       icon: <Hammer className="h-12 w-12 text-white" />
     },
-    {
-      title: "Architectural Design",
-      desc: "Creating modern, functional, and aesthetic architectural designs for residential and commercial projects.",
-      features: ["3D Modeling", "Interior Design", "Landscape Planning", "Blueprint Creation"],
-      image: buildingImg,
-      icon: <Ruler className="h-12 w-12 text-white" />
-    },
-    {
-      title: "Heavy Equipment Supply",
-      desc: "Reliable supply of heavy machinery for large-scale construction projects across the nation.",
-      features: ["Excavators", "Cranes", "Bulldozers", "Dump Trucks"],
-      image: roadImg,
-      icon: <Truck className="h-12 w-12 text-white" />
-    },
-    {
-      title: "Renovation & Maintenance",
-      desc: "Restoring and upgrading existing structures to meet modern standards and extend their lifespan.",
-      features: ["Building Retrofitting", "Road Maintenance", "Bridge Repair", "Heritage Preservation"],
-      image: bridgeImg,
-      icon: <Hammer className="h-12 w-12 text-white" />
-    }
+    
   ];
 
   return (
@@ -107,9 +91,7 @@ export default function Services() {
                       </div>
                     ))}
                   </div>
-                  <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white rounded-none px-8">
-                    Request Quote
-                  </Button>
+                  
                 </div>
               </motion.div>
             ))}
@@ -117,20 +99,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Equipment Rental Strip */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
-            <h2 className="text-3xl font-bold font-heading mb-4">Need Heavy Equipment?</h2>
-            <p className="text-gray-300 max-w-xl">
-              We also provide heavy construction equipment rental services including excavators, bulldozers, cranes, and dump trucks.
-            </p>
-          </div>
-          <Button className="bg-secondary hover:bg-secondary/90 text-white text-lg px-8 py-6 rounded-none font-bold uppercase tracking-wide">
-            Rent Equipment
-          </Button>
-        </div>
-      </section>
+ 
     </div>
   );
 }

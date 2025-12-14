@@ -29,13 +29,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
     { href: "/about", label: "About Us" },
     { href: "/services", label: "Services" },
     { href: "/projects", label: "Projects" },
-    { href: "/equipment", label: "Equipment" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
     <div className="min-h-screen flex flex-col font-sans">
-      {/* Top Bar - Hidden on mobile, visible on desktop */}
+      {/* Top Bar - Hidden on mobile, visible on desktop
       <div className="bg-primary text-white py-2 px-4 text-sm hidden lg:block border-b border-white/10">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
@@ -57,7 +56,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Navbar */}
       <header 
@@ -71,9 +70,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <Link href="/">
             <a className="flex items-center gap-2 group relative z-50">
               <img 
-                src={logoFull} 
+                src={logoFull}
                 alt="Rajeshwori Construction" 
-                className={`transition-all duration-300 object-contain ${isScrolled ? "h-12" : "h-16"}`} 
+                className={`transition-all duration-300 object-contain ${isScrolled ? "h-12" : "h-20"}`} 
               />
             </a>
           </Link>
@@ -199,7 +198,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 We build the foundation of tomorrow.
               </p>
               <div className="flex gap-4 pt-2">
-                <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-secondary hover:border-secondary hover:-translate-y-1 transition-all duration-300 rounded-md group"><Facebook className="h-4 w-4 group-hover:text-white" /></a>
+                <a href="https://www.facebook.com/rajeshworiconstruction.company" className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-secondary hover:border-secondary hover:-translate-y-1 transition-all duration-300 rounded-md group"><Facebook className="h-4 w-4 group-hover:text-white" /></a>
                 <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-secondary hover:border-secondary hover:-translate-y-1 transition-all duration-300 rounded-md group"><Instagram className="h-4 w-4 group-hover:text-white" /></a>
                 <a href="#" className="w-10 h-10 bg-white/5 border border-white/10 flex items-center justify-center hover:bg-secondary hover:border-secondary hover:-translate-y-1 transition-all duration-300 rounded-md group"><Linkedin className="h-4 w-4 group-hover:text-white" /></a>
               </div>
@@ -241,7 +240,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </ul>
             </div>
 
-            <div>
+            {/* <div>
               <h3 className="text-lg font-bold font-heading mb-6 relative inline-block">
                 Contact Info
                 <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full"></span>
@@ -271,11 +270,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
                   </div>
                   <div>
                     <span className="block text-xs text-gray-400 uppercase tracking-wider mb-1">Email</span>
-                    <span className="text-white text-sm font-medium">info@rajeshwori.com</span>
+                    <span className="text-white text-sm font-medium"></span>
                   </div>
                 </li>
               </ul>
-            </div>
+            </div> */}
+            
           </div>
 
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">

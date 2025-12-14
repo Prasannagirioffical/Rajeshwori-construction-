@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m, motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle, Clock, HardHat, ShieldCheck, Trophy, Quote, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,10 +11,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import heroBg from "@assets/generated_images/hero_background_for_construction_website.png";
-import buildingImg from "@assets/generated_images/commercial_building_construction_service_image.png";
-import roadImg from "@assets/generated_images/road_construction_service_image.png";
-import bridgeImg from "@assets/generated_images/bridge_construction_service_image.png";
+import heroBg from "@assets/generated_images/qqq.jpg";
+import buildingImg from "@assets/generated_images/ex.jpg"; 
+import building1Img from "@assets/generated_images/ruru.jpg"; 
+
+import roadImg from "@assets/generated_images/44.jpg";
+import bridgeImg from "@assets/generated_images/cc.jpg";
 
 export default function Home() {
   const container = {
@@ -33,12 +35,7 @@ export default function Home() {
   };
 
   const services = [
-    {
-      title: "Building Construction",
-      desc: "Commercial complexes, residential housings, and industrial facilities built with precision.",
-      icon: <HardHat className="h-8 w-8 text-secondary" />,
-      image: buildingImg
-    },
+    
     {
       title: "Roads & Highways",
       desc: "Developing national infrastructure with high-grade asphalt and concrete road networks.",
@@ -50,7 +47,16 @@ export default function Home() {
       desc: "Connecting communities with durable, engineering-marvel bridges across Nepal.",
       icon: <ShieldCheck className="h-8 w-8 text-secondary" />,
       image: bridgeImg
-    }
+    },
+    {
+      title: "Building Construction",
+      desc: "Goverment and commercial buildings with top-notch materials and skilled craftsmanship.",
+      icon: <HardHat className="h-8 w-8 text-secondary" />,
+      image: building1Img
+    },
+
+    
+
   ];
 
   return (
@@ -80,12 +86,9 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-4xl"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-16 bg-secondary" />
-              <span className="uppercase tracking-[0.2em] font-bold text-sm text-secondary">Est. 2010</span>
-            </div>
+           
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-heading leading-[0.9] mb-8">
+            <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 text-5xl md:text-7xl font-bold leading-tight mb-6>">
               Building the <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">Foundation</span> <br />
               of Tomorrow
@@ -97,7 +100,9 @@ export default function Home() {
             </p>
             
             <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed font-light">
-              Leading construction company delivering quality, innovation, and trust across Nepal. From skyscrapers to highways, we build with excellence.
+               The well-known and well-established Construction company
+              in Nepal committed to delivering excellence in every project we undertake.
+        
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -179,10 +184,13 @@ export default function Home() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
                 {[
-                  "ISO 9001:2015 Certified",
-                  "Expert Engineering Team",
+                  "Class 'A' Contractor",
+                  "Quality Assurance",
                   "Timely Delivery",
-                  "Class 'A' Contractor"
+                  "Experienced Team",
+                
+                
+                  
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg border border-gray-100 hover:border-secondary/30 transition-colors">
                     <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-secondary">
@@ -272,10 +280,10 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
             {[
-              { icon: <Trophy className="h-12 w-12 text-secondary" />, count: "150+", label: "Completed Projects" },
-              { icon: <HardHat className="h-12 w-12 text-secondary" />, count: "50+", label: "Expert Engineers" },
-              { icon: <Clock className="h-12 w-12 text-secondary" />, count: "100%", label: "On Time Delivery" },
-              { icon: <ShieldCheck className="h-12 w-12 text-secondary" />, count: "25+", label: "Awards Won" },
+              { icon: <Trophy className="h-12 i-12 text-secondary" />, count: "200+", label: "Completed Projects" },
+              { icon: <HardHat className="h-12 w-12 text-secondary" />, count: "199+", label: "Team" },
+              { icon: <Clock className="h-12 w-12 text-secondary" />, count: "99%", label: "On Time Delivery" },
+              { icon: <ShieldCheck className="h-12 w-12 text-secondary" />, count: "5+", label: "Awards Won" },
             ].map((stat, idx) => (
               <motion.div 
                 key={idx}
@@ -286,7 +294,7 @@ export default function Home() {
                 className="p-8 border border-white/10 bg-white/5 backdrop-blur-md rounded-lg hover:bg-white/10 transition-colors group"
               >
                 <div className="flex justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300">{stat.icon}</div>
-                <h3 className="text-5xl font-bold font-heading mb-3">{stat.count}</h3>
+                <h3 className="text-5xl font-bold font-heading mb-3 text-white">{stat.count}</h3>
                 <p className="text-gray-300 uppercase tracking-widest text-sm font-semibold group-hover:text-secondary transition-colors">{stat.label}</p>
               </motion.div>
             ))}
@@ -345,7 +353,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials - Styled */}
-      <section className="py-24 bg-gray-50">
+      {/* <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h4 className="text-secondary font-bold uppercase tracking-[0.2em] mb-3 text-sm">Testimonials</h4>
@@ -397,9 +405,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* CTA Section - Bold */}
+      {/* CTA Section - Bold
       <section className="py-28 bg-primary text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -419,7 +427,7 @@ export default function Home() {
             </Link>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
