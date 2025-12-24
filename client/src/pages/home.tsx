@@ -332,9 +332,9 @@ export default function Home() {
                     <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                       <div className="w-12 h-1 bg-secondary mb-4 w-0 group-hover:w-12 transition-all duration-500" />
                       <p className="text-secondary text-xs font-bold uppercase tracking-widest mb-2">Infrastructure</p>
-                      <h3 className="text-2xl font-bold text-white mb-3">Kathmandu Highway Project</h3>
+                      <h3 className="text-2xl font-bold text-white mb-3">Rajeshwori Construction</h3>
                       <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
-                        A major 4-lane highway connecting key industrial zones with modern drainage and lighting systems.
+                        Rajeshwori Construction is a leading construction company specializing in residential, commercial, and infrastructure projects. With a strong focus on quality and innovation, we deliver exceptional results for our clients.
                       </p>
                       <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                         <span className="text-white text-xs font-bold uppercase border-b border-secondary pb-1">View Case Study</span>
